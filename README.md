@@ -1,5 +1,5 @@
-[![Tag and Release](https://github.com/zhavir/python-tech-assessment/actions/workflows/auto-tag-and-release.yml/badge.svg?branch=main)](https://github.com/zhavir/python-tech-assessment/actions/workflows/auto-tag-and-release.yml)
-[![codecov](https://codecov.io/gh/zhavir/python-tech-assessment/branch/main/graph/badge.svg?token=3N66CLB1ZE)](https://codecov.io/gh/zhavir/python-tech-assessment)
+[![Tag and Release](https://github.com/zhavir/tech-assessment/actions/workflows/auto-tag-and-release.yml/badge.svg?branch=main)](https://github.com/zhavir/tech-assessment/actions/workflows/auto-tag-and-release.yml)
+[![codecov](https://codecov.io/gh/zhavir/tech-assessment/branch/main/graph/badge.svg?token=3N66CLB1ZE)](https://codecov.io/gh/zhavir/tech-assessment)
 [![python](https://img.shields.io/badge/python-3.10-2334D058)](https://img.shields.io/badge/python-3.10-2334D058)
 ## Exercise Explanation
 ### Target Frameworks, tools and services
@@ -93,6 +93,6 @@ docker compose up --build tests
   - [] REST API
   - [] Tests
   - [] Postman Collection
-- [] Deployment
+- [x] Deployment
 - [] Workflow Diagram
 - [] Documentation
