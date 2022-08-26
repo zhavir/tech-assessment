@@ -5,8 +5,16 @@ services:
     build:
       target: production
     image: 'zhavir/assessment-webapp'
+#  Override the default settings
+#    environment:
+#      DEFAULT_PASSWORD_LENGTH: 10
+#      DEFAULT_HAS_NUMBERS: true
+#      DEFAULT_HAS_LOWERCASE_CHARS: true
+#      DEFAULT_HAS_UPPERCASE_CHARS: true
+#      DEFAULT_HAS_SPECIAL_CHARS: true
     ports:
       - 9001:9001
+# enable live reloading
     volumes:
       - ./src/app:/src/app
     networks:
