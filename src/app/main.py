@@ -4,6 +4,7 @@ import uvicorn
 from fastapi import FastAPI, APIRouter
 from fastapi.openapi.utils import get_openapi
 
+from app.routers import router
 
 APP_VERSION = 1.0
 SERVICE_NAME = 'Password Generator'
@@ -16,6 +17,7 @@ router_api = APIRouter()
 router_api_v1 = APIRouter()
 # Registration of routes
 
+router_api_v1.include_router(router, prefix='/passwords')
 
 # Finalizing setup of router with FastAPI app
 router_api.include_router(router_api_v1, prefix="/v1")

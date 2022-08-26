@@ -20,6 +20,9 @@ jobs:
         uses: py-actions/py-dependency-install@v3
         with:
           path: "requirements-dev.txt"
+      - name: set pythonpath
+        run: |
+          echo "PYTHONPATH=src/" >> $GITHUB_ENV
       - name: Test with pytest
         run: |
           pytest --cov=src/app --cov=src/tests --cov-report xml:coverage.xml src
