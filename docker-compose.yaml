@@ -1,0 +1,25 @@
+
+services:
+
+  webapp:
+    build:
+      target: production
+    image: 'zhavir/assessment-webapp'
+    ports:
+      - 9001:9001
+    volumes:
+      - ./app:/app
+    networks:
+      - test
+
+  tests:
+    build:
+      target: development
+    image: 'zhavir/assessment-tests'
+    networks:
+      - test
+
+networks:
+
+  test:
+    driver: bridge
