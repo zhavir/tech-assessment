@@ -4,6 +4,7 @@ from app.routers import router
 from app.routers.models.requests import GeneratePasswordRequest
 from app.routers.models.responses import GeneratedPasswordResponse
 from app.services.password_generator_service import PasswordGeneratorService
+from app.providers.randomizer_provider import RandomizerProvider
 
 
 @router.post(
@@ -12,7 +13,8 @@ from app.services.password_generator_service import PasswordGeneratorService
     response_model=GeneratedPasswordResponse,
 )
 async def generate_password(request: GeneratePasswordRequest) -> GeneratedPasswordResponse:
-    password = PasswordGeneratorService().generate_password(
+    service = PasswordGeneratorService(randomizer_service=RandomizerProvider())
+    password = await service.generate_password(
         password_length=request.password_length,
         has_numbers=request.has_numbers,
         has_lowercase_chars=request.has_lowercase_chars,

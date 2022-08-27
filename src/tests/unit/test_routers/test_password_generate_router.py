@@ -5,8 +5,12 @@ from httpx import AsyncClient
 
 
 @pytest.mark.asyncio
-async def test_generate_password(mocked_client: AsyncClient, mocked_password_generator_service: AsyncMock):
-    mocked_password_generator_service.return_value.generate_password.return_value = "something"
+async def test_generate_password(
+    mocked_client: AsyncClient,
+    mocked_password_generator_service: AsyncMock,
+        mocked_randomizer_provider,
+):
+    mocked_password_generator_service.return_value.generate_password = AsyncMock(return_value="something")
 
     async with mocked_client as client:
         response = await client.post("/api/v1/passwords/generate/", json={})
@@ -37,6 +41,7 @@ async def test_generate_password(mocked_client: AsyncClient, mocked_password_gen
 async def test_generate_password_but_input_is_not_valid(
     mocked_client: AsyncClient,
     mocked_password_generator_service: AsyncMock,
+        mocked_randomizer_provider,
     body: dict,
 ):
     async with mocked_client as client:

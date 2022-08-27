@@ -15,7 +15,9 @@ def mocked_client() -> Generator[AsyncClient, None, None]:
 
 @pytest.fixture(scope="function")
 def mocked_password_generator_service(mocker: MockerFixture) -> Generator[AsyncMock, None, None]:
-    yield mocker.patch(
-        'app.routers.password_generation_router.PasswordGeneratorService',
-    )
+    yield mocker.patch('app.routers.password_generator_router.PasswordGeneratorService', )
 
+
+@pytest.fixture(scope="function")
+def mocked_randomizer_provider(mocker: MockerFixture) -> Generator[AsyncMock, None, None]:
+    yield mocker.patch('app.routers.password_generator_router.RandomizerProvider', )

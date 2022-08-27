@@ -88,10 +88,10 @@ docker compose up --build tests
 
 ## Tasks
 
-- [] Application
-  - [] Packaging
-  - [] REST API
-  - [] Tests
+- [x] Application
+  - [x] Packaging
+  - [x] REST API
+  - [x] Tests
   - [] Postman Collection
 - [x] Deployment
 - [] Workflow Diagram

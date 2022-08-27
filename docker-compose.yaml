@@ -15,8 +15,8 @@ services:
     ports:
       - 9001:9001
 # enable live reloading
-    volumes:
-      - ./src/app:/src/app
+#    volumes:
+#      - ./src/app:/src/app
     networks:
       - test
 
