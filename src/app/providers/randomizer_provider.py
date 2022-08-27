@@ -11,4 +11,4 @@ class RandomizerProvider:
         values: List[str],
         length: int,
     ) -> List[str]:
-        return random.sample(values, length)
+        return [random.choice(values) for _ in range(length)]
