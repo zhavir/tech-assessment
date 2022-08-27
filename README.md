@@ -92,7 +92,7 @@ docker compose up --build tests
   - [x] Packaging
   - [x] REST API
   - [x] Tests
-  - [] Postman Collection
+  - [x] Postman Collection
 - [x] Deployment
 - [] Workflow Diagram
 - [] Documentation
