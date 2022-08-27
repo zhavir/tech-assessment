@@ -13,6 +13,7 @@ from app.providers.randomizer_provider import RandomizerProvider
         (["test"], 0),
         (["test", "test2"], 1),
         (list(string.digits), 5),
+        (list(string.digits), 15),
     ]
 )
 @pytest.mark.asyncio
