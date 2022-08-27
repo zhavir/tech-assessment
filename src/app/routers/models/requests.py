@@ -4,7 +4,7 @@ from app.settings import settings
 
 
 class GeneratePasswordRequest(BaseModel):
-    password_length: conint(gt=0, le=200) = settings.default_password_length
+    password_length: conint(gt=0, le=200) = settings.default_password_length  # type: ignore
     has_numbers: bool = settings.default_has_numbers
     has_lowercase_chars: bool = settings.default_has_lowercase_chars
     has_uppercase_chars: bool = settings.default_has_uppercase_chars

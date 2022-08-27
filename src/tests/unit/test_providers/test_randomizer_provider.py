@@ -14,7 +14,7 @@ from app.providers.randomizer_provider import RandomizerProvider
         (["test", "test2"], 1),
         (list(string.digits), 5),
         (list(string.digits), 15),
-    ]
+    ],
 )
 @pytest.mark.asyncio
 async def test_generate_random_sample(values: List[str], length: int):

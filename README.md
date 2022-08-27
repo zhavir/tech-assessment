@@ -90,6 +90,16 @@ Openapi specifications available at: http://localhost:9001/docs/
 #### Registry
 Docker registry available at: https://hub.docker.com/r/zhavir/python-assessment
 
+#### 4. Pre-commit hooks
+
+I used pre-commit hooks to format the code with `yapf` and optimize the imports using `isort`. 
+
+To activate the hooks you have to run the following command:
+
+```bash
+pre-commit install
+```
+
 ## Best practices followed
 In the first step, I used a multi-layer pattern approach just because the domain was 
 very tiny and does not justify a domain driven approach ( for example by following the hexagonal architecture ).
@@ -98,6 +108,8 @@ I was undecided about adopting the DI by using dependency-injector, for time con
 I followed those principles while modelling the classes:
 * Open–closed principle
 * Single-responsibility principle
+
+Due to the fact python is not a typed language, I've adopted MyPy in order to enforce the type checking on tests run
 
 For the testing, I used to cover everything with the unit tests. Meanwhile, I've tested only some happy path with the 
 integration tests. This because I've decided to follow the testing pyramid principle. 

@@ -9,7 +9,7 @@ async def get_string_chars(
     uppercase_letters: bool,
     special_chars: bool,
 ) -> List[str]:
-    allowed_chars = []
+    allowed_chars: List[str] = []
 
     if numbers:
         allowed_chars.extend(string.digits)

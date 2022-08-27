@@ -11,7 +11,7 @@ from httpx import AsyncClient
         'has_lowercase_chars',
         'has_uppercase_chars',
         'has_special_chars',
-        'expected_match'
+        'expected_match',
     ],
     [
         (20, True, False, False, False, r'^\d+$'),
@@ -29,17 +29,20 @@ async def test_e2e_generate_password(
     has_lowercase_chars: bool,
     has_uppercase_chars: bool,
     has_special_chars: bool,
-    expected_match: str
+    expected_match: str,
 ):
 
     async with mocked_client as client:
-        response = await client.post("/api/v1/passwords/generate/", json={
-            "password_length": password_length,
-            "has_numbers": has_numbers,
-            "has_lowercase_chars": has_lowercase_chars,
-            "has_uppercase_chars": has_uppercase_chars,
-            "has_special_chars": has_special_chars,
-        })
+        response = await client.post(
+            "/api/v1/passwords/generate/",
+            json={
+                "password_length": password_length,
+                "has_numbers": has_numbers,
+                "has_lowercase_chars": has_lowercase_chars,
+                "has_uppercase_chars": has_uppercase_chars,
+                "has_special_chars": has_special_chars,
+            }
+        )
 
     assert response.status_code == 200
     body = response.json()
