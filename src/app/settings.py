@@ -4,7 +4,7 @@ from pydantic import BaseSettings, conint
 
 
 class Settings(BaseSettings):
-    default_password_length: conint(gt=0, le=200) = 10
+    default_password_length: conint(gt=0, le=200) = 10  # type: ignore
     default_has_numbers: bool = True
     default_has_lowercase_chars: bool = True
     default_has_uppercase_chars: bool = True
