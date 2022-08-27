@@ -69,7 +69,7 @@ https://docs.python.org/3/library/venv.html
     ```
 5. run the webapp natively
     ``` shell
-   python main.py
+   PYTHONPATH=$(pwd)/src python src/app/main.py
     ```
 6. run the tests
     ``` shell
@@ -85,6 +85,31 @@ Run tests
 ```shell
 docker compose up --build tests
 ```
+#### OpenAPI
+Openapi specifications available at: http://localhost:9001/docs/
+#### Registry
+Docker registry available at: https://hub.docker.com/r/zhavir/python-assessment
+
+## Best practices followed
+In the first step, I used a multi-layer pattern approach just because the domain was 
+very tiny and does not justify a domain driven approach ( for example by following the hexagonal architecture ).
+I was undecided about adopting the DI by using dependency-injector, for time constraint reason I've decided to skip.
+
+I followed those principles while modelling the classes:
+* Open–closed principle
+* Single-responsibility principle
+
+For the testing, I used to cover everything with the unit tests. Meanwhile, I've tested only some happy path with the 
+integration tests. This because I've decided to follow the testing pyramid principle. 
+Moreover, I tried to follow the 100% test coverage objective
+
+I've also adopted the semantic versioning specification in order to determine which tag to assign to my commit.
+I've decided to squash my commits before pushing them to the remote repository just because I would like to keep the git history as 
+clean as possible.
+I also followed the trunk based development model.
+
+## Workflow Diagram
+![workflow](https://github.com/zhavir/tech-assessment/blob/main/media/workflow.png?raw=true)
 
 ## Tasks
 
@@ -94,5 +119,5 @@ docker compose up --build tests
   - [x] Tests
   - [x] Postman Collection
 - [x] Deployment
-- [] Workflow Diagram
-- [] Documentation
+- [x] Workflow Diagram
+- [x] Documentation
